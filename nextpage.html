@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeQuiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nextpage.css">
+    <style>
+        body {
+            background-image: url('pichu.jpg');
+            background-size: contain;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        .quiz-container {
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .question-section {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 1.2em;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            font-size: 1.2em;
+            color: honeydew;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.5em;
+            background-color: transparent;
+            color: whitesmoke;
+            border: 3px solid whitesmoke;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .error {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>PokeQuiz</h1>
+        <form id="quizForm">
+            <div class="question-section">
+                <p class="question">1: What type of Weather do you prefer?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="Kindness"> Warm and Sunny</label><br>
+                    <label><input type="radio" name="q1" value="Intelligence"> Cold and Snowy</label><br>
+                    <label><input type="radio" name="q1" value="Humour"> Any</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">2: What Personality trait do you value most in a friend?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="Kindness"> Kindness</label><br>
+                    <label><input type="radio" name="q2" value="Intelligence"> Intelligence</label><br>
+                    <label><input type="radio" name="q2" value="Humour"> Humour</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">3: What's your Ideal Day?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q3" value="Humour"> Adventuring and discovering new things</label><br>
+                    <label><input type="radio" name="q3" value="Kindness"> Hanging out with friends and having fun</label><br>
+                    <label><input type="radio" name="q3" value="Intelligence"> Doing things at my own pace, enjoying solitude</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">4: You see a fight happening. Your approach?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q4" value="Intelligence"> Resolve it with patience and understanding</label><br>
+                    <label><input type="radio" name="q4" value="Kindness"> Join in the conflict and make things worse</label><br>
+                    <label><input type="radio" name="q4" value="Humour"> Observe and later gossip with friends</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">5: You find a wallet in the street. Your first thought?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q5" value="Kindness"> I should return it to the police</label><br>
+                    <label><input type="radio" name="q5" value="Intelligence"> I should check the wallet for ID cards</label><br>
+                    <label><input type="radio" name="q5" value="Humour"> I should place the order for that new hoodie now</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">6: Your classmate is spreading bad rumours about you. How do you deal with it?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q6" value="Kindness"> Confront them</label><br>
+                    <label><input type="radio" name="q6" value="Intelligence"> Ignore it</label><br>
+                    <label><input type="radio" name="q6" value="Humour"> Spread worse rumours about them</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">7: Your favourite song is being played. You-</p>
+                <div class="answers">
+                    <label><input type="radio" name="q7" value="Intelligence"> Hum along</label><br>
+                    <label><input type="radio" name="q7" value="Kindness"> Bop your head to it</label><br>
+                    <label><input type="radio" name="q7" value="Humour"> Scream the lyrics</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">8: Your friend has made a mistake despite your warnings. What do you do?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q8" value="Kindness"> Comfort them</label><br>
+                    <label><input type="radio" name="q8" value="Intelligence"> Give them constructive criticism</label><br>
+                    <label><input type="radio" name="q8" value="Humour"> "I told you so"</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">9: You like this person. How do you confess it to them?</p>
+                <div class="answers">
+                    <label><input type="radio" name="q9" value="Kindness"> In real life</label><br>
+                    <label><input type="radio" name="q9" value="Intelligence"> Through text</label><br>
+                    <label><input type="radio" name="q9" value="Humour"> Never</label>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <p class="question">10: Your friend just fell down and got mud all over themself. You first -</p>
+                <div class="answers">
+                    <label><input type="radio" name="q10" value="Kindness"> Make sure they are okay</label><br>
+                    <label><input type="radio" name="q10" value="Intelligence"> Look for water to clean them</label><br>
+                    <label><input type="radio" name="q10" value="Humour"> Record a video and laugh hysterically</label>
+                </div>
+            </div>
+
+            <p id="errorMessage" class="error">Please answer all questions before submitting!</p>
+            <button type="button" class="btn" onclick="submitQuiz()">Submit</button>
+        </form>
+    </div>
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const errorMessage = document.getElementById('errorMessage');
+            let allAnswered = true;
+
+            // Check if all questions are answered
+            for (let i = 1; i <= 10; i++) {
+                const question = `q${i}`;
+                if (!document.querySelector(`input[name="${question}"]:checked`)) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allAnswered) {
+                errorMessage.style.display = 'block'; // Show error message
+                return; // Stop the function if not all questions are answered
+            } else {
+                errorMessage.style.display = 'none'; // Hide error message
+            }
+
+            // Proceed with quiz submission
+            const answers = new FormData(form);
+            let score = { Kindness: 0, Humour: 0, Intelligence: 0 };
+
+            // Count the number of times each trait was chosen
+            for (let entry of answers.entries()) {
+                score[entry[1]] += 1;
+            }
+
+            let maxScore = 0;
+            let trait = '';
+
+            // Determine which trait has the highest score
+            for (const [key, value] of Object.entries(score)) {
+                if (value > maxScore) {
+                    maxScore = value;
+                    trait = key;
+                }
+            }
+
+            // Pokémon categories based on highest trait
+            const pokemonMap = {
+                Kindness: [
+                    { name: 'Togepi', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/175.png', entry: 'The walking, talking egg that somehow survives on pure optimism and headbutts. It’s like that one friend who’s always weirdly cheerful at 8 a.m. lectures, spreading good vibes and occasionally tripping over its own feet. Don’t let its cuteness fool you—it’s low-key plotting world domination, one happy dance at a time.' },
+                    { name: 'Dragonite', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/149.png', entry: 'The big, cuddly dragon that looks like it should be selling you insurance but is actually out here saving ships in storms and flying faster than a jet. It’s like your mom’s best friend—hugs you with those tiny arms, but could also bench-press a mountain if it wanted to. Surprisingly chill for a creature that could level cities.' },
+                    { name: 'Gallade', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/475.png', entry: 'The psychic knight with elbows sharper than your ex’s comebacks. It’s got the grace of a ballet dancer and the precision of a surgeon, but don’t let its fancy moves fool you—it’s still a total mom friend. Always ready to protect its squad, even if it means slicing through problems (literally). Also, those blades? Perfect for cutting pizza at parties.' },
+                    { name: 'Chansey', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/113.png', entry: 'The walking omelette with a heart of gold and a pocket full of free healthcare. It’s like that one friend who always has snacks, band-aids, and emotional support ready to go. But don’t let its sweet vibe fool you—it can tank hits like a champ and probably knows all your secrets. Basically, the ultimate nurse and therapist combo.' },
+                    { name: 'Infernape', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/392.png', entry: 'This Pokémon is basically that one friend who’s always hyped up on energy drinks, ready to fight anyone who looks at them sideways. It’s got flames on its head (probably from all the stress), punches faster than your procrastination excuses, and still somehow has time to look cool. Just don’t touch its snacks—it’s *very* protective.' },
+                    { name: 'Tepig', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/498.png', entry: 'The little fire pig that’s basically a walking barbecue waiting to happen. It’s always snorting around, looking for snacks, and accidentally setting things on fire with its sneezes. Think of it as that one friend who’s a total foodie but also a walking hazard in the kitchen. Cute, clumsy, and dangerously flammable.' }
+                ],
+                Humour: [
+                    { name: 'Aipom', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/190.png', entry: 'The hyperactive monkey with a hand on its tail, because one pair of hands just wasn’t enough chaos. It’s like that friend who’s always juggling five things at once—texting, eating, and somehow still losing their keys. Aipom’s probably the reason your stuff goes missing, but it’s so cheeky and bouncy, you can’t even stay mad.' },
+                    { name: 'Emolga', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/587.png', entry: 'The flying squirrel that thinks it’s a rockstar, zapping everything in sight and posing like it’s on a magazine cover. It’s that friend who’s always stealing your snacks but somehow gets away with it because it’s just too cute. Also, good luck catching it—it’s basically the Pokémon version of “you can’t sit with us.' },
+                    { name: 'Ludicolo', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/272.png', entry: 'The party duck that’s perpetually living its best life, dancing like nobody’s watching (even though everyone is). It’s like that one friend who turns every study session into a fiesta, complete with questionable dance moves and a sombrero. Rain or shine, Ludicolo’s vibes are always immaculate.' },
+                    { name: 'Jigglypuff', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/039.png', entry: 'The tiny balloon with a voice that could knock out a whole lecture hall. It’s like that friend who insists on singing karaoke but puts everyone to sleep (literally). Jigglypuff’s got a permanent marker and zero regrets, so if you wake up with doodles on your face, you know who to blame.' },
+                    { name: 'Totodile', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/158.png', entry: 'The tiny crocodile that’s 90% teeth, 10% chaos. It’s like that friend who’s always biting stuff for no reason—your pens, your snacks, your patience. Totodile’s idea of a good time is chomping on everything in sight and then looking at you like it didn’t just cause a minor disaster. Cute, but definitely a liability.' },
+                    { name: 'Pichu', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/172.png', entry: 'The tiny, sparky ball of chaos that shocks itself more than it shocks others. It’s like a toddler with a taser—adorable but dangerously unpredictable. Pichu’s basically the Pokémon version of that friend who tries to help but ends up making everything worse (and cuter).' }
+                ],
+                Intelligence: [
+                    { name: 'Alakazam', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/065.png', entry: 'The brainy psychic with a mustache that screams "I solve theorems for fun." It’s like that one friend who aces every exam without even trying but still forgets where they left their spoons. With an IQ higher than the national debt and spoons that bend reality, Alakazam could probably rule the world—if it weren’t too busy meditating or judging your life choices.' },
+                    { name: 'Weavile', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/461.png', entry: 'The edgy, speed-demon weasel that looks like it just walked out of a 2000s emo music video. It’s like that friend who’s always wearing fingerless gloves and talking about how "no one understands them," but secretly they’re just really good at stealing your fries when you’re not looking. Fast, fierce, and probably judging your life choices from the shadows.' },
+                    { name: 'Greninja', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/658.png', entry: 'The ninja frog that’s cooler than you’ll ever be. It’s like that friend who shows up to class in a full-on outfit but still aces the pop quiz. With its water shurikens and tongue-scarf combo, Greninja’s basically the anime protagonist of the Pokémon world—mysterious, overqualified, and always ready to strike a pose. Just don’t ask where it got the scarf.' },
+                    { name: 'Empoleon', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/395.png', entry: 'The regal penguin that’s part emperor, part navy admiral, and all attitude. It’s like that one friend who walks into the room like they own the place (and honestly, they probably do). With wings sharp enough to slice through icebergs and a stare that could freeze lava, Empoleon’s the kind of Pokémon that demands respect—or else it’ll start flipping tables like,“Do you know who I am?' },
+                    { name: 'Metagross', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/376.png', entry: 'The walking supercomputer that’s basically the Pokémon version of a NASA superweapon. It’s like that one friend who’s a literal genius but still can’t figure out how to use the coffee machine. With four brains and a body made of solid steel, Metagross could probably solve world hunger but is too busy calculating the exact trajectory to dunk on its opponents. Don’t challenge it to chess—it’s already won.' },
+                    { name: 'Treecko', image: 'https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/252.png', entry: 'The tiny gecko that’s cooler than your entire squad combined. It’s like that friend who’s always leaning against walls with their arms crossed, looking like they’re in a low-budget action movie. With its unshakable confidence and a tail that could probably bench-press a small tree, Treecko’s out here scaling skyscrapers and staring into the sunset like it’s the main character. Spoiler: it is.' }
+                ]
+            };
+
+            // Select a random Pokémon from the chosen trait's list
+            const selectedPokemon = pokemonMap[trait][Math.floor(Math.random() * pokemonMap[trait].length)];
+
+            // Encode the Pokémon data into the URL parameters
+            const params = new URLSearchParams();
+            params.set('name', selectedPokemon.name);
+            params.set('image', selectedPokemon.image);
+            params.set('entry', selectedPokemon.entry);
+
+            // Redirect to results.html with Pokémon data in the URL
+            window.location.href = `results.html?${params.toString()}`;
+        }
+    </script>
+</body>
+</html>

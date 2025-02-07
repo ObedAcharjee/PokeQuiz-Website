@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You would be a </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(pichu.jpg);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            background-size: contain;
+        }
+        .result-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            color: white;
+            width: 90%;
+            max-width: 500px;
+        }
+        .pokemon-name {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        .pokemon-image {
+            width: 200px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .pokedex-entry {
+            font-size: 1.2em;
+            color: #d3d3d3;
+        }
+        .back-btn {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: none;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h1>You would be a </h1>
+        <div id="pokemonResult">
+            <!-- Pokémon result will be displayed here -->
+        </div>
+        <button class="back-btn" onclick="window.location.href = 'index.html';">Back to Quiz</button>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Retrieve Pokémon details from the URL parameters
+        const name = getQueryParam('name');
+        const image = getQueryParam('image');
+        const entry = getQueryParam('entry');
+
+        // Display the Pokémon result if data exists
+        if (name && image && entry) {
+            document.getElementById('pokemonResult').innerHTML = `
+                <div class="pokemon-name">${name}</div>
+                <img src="${image}" alt="${name}" class="pokemon-image">
+                <p class="pokedex-entry">${entry}</p>
+            `;
+        } else {
+            document.getElementById('pokemonResult').innerHTML = '<p>No result found!</p>';
+        }
+    </script>
+
+</body>
+</html>
