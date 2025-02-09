@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    font-size: 18px;
+}
+
+/* Default background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(https://wallpaper.forfun.com/fetch/05/05a898a30c6cc94d43dceca1556e9c3e.jpeg) no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Android-specific background */
+@media (pointer: coarse) {
+    body::before {
+        background: url(gamblersmobile.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.quiz-container {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px;
+    overflow: visible;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 48px;
+    color: whitesmoke;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.question-section {
+    position: relative;
+    margin: 20px 0;
+    border: 3px solid black;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    color: black;
+}
+
+
+
+
+/* Ensure text inside is highly visible */
+.question-section h2, 
+.question-section p,
+.question-section label {
+    color: black;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Glow effect for readability */
+}
+
+
+.question {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: black;
+    text-align: left;
+}
+
+.answers {
+    margin: 15px 0;
+    font-size: 0.9em;
+    color: black;
+}
+
+.answers label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    color: black;
+    text-align: left;
+}
+
+.submit-btn {
+    padding: 10px 25px;
+    font-size: 1em;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 48px;
+    }
+    .question {
+        font-size: 0.9em;
+    }
+    .answers {
+        font-size: 42px em;
+    }
+    .submit-btn {
+        font-size: 0.9em;
+    }
+}
+
+label {
+    display: block;
+    margin: 4px 0;
+    padding: 5px;
+}
+
+/* Different background images for quiz sections */
+#first { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/04/1bulbasaur1920x1080.jpg); background-size: cover; background-position: right; }
+#second { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/10/4charmander1920x1080.jpg); background-size: cover; background-position: right; }
+#third { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/08/7squirtle1920x10801.jpg); background-size: cover; background-position: 83% center; }
+#fourth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/12/152chikorita1920x1080.jpg); background-size: cover; background-position: right; }
+#fifth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2012/02/155cyndaquil1920x1080.jpg); background-size: cover; background-position: 80% center; }
+#sixth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/04/158totodile1920x1080.jpg); background-size: cover; background-position: 80% center; }
+#seventh { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/11/252treecko1920x1080.jpg); background-size: cover; background-position: right; }
+#eighth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/08/255torchic1920x1080.jpg); background-size: cover; background-position: right; }
+#ninth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/04/258mudkip1920x1080.jpg); background-size: cover; background-position: 80% center; }
+#tenth { background-image: url(https://pokewalls.wordpress.com/wp-content/uploads/2011/09/151mew1920x1080.jpg); background-size: cover; background-position: right; }

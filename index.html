@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeQuiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        /* Default Background (For Desktop) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://wallpaper.forfun.com/fetch/05/05a898a30c6cc94d43dceca1556e9c3e.jpeg') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        /* Mobile-Specific Background */
+        @media (pointer: coarse) {
+            body::before {
+                background: url(gamblersmobile.jpg) no-repeat center center;
+                background-size: cover;
+            }
+        }
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: honeydew;
+        }
+
+        /* Form Styling */
+        #username-form {
+            margin-top: 20px;
+        }
+
+        #username-form label {
+            font-size: 1.2em;
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #username-form input {
+            font-size: 1em;
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        #username-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Button Styling */
+        .btn {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: none;
+            border: 3px solid white;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .btn:hover {
+            color: whitesmoke;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PokeQuiz</h1>
+        <p>Answer the following 10 Questions and find out what Pokémon you would be!</p>
+
+        <!-- Username Form -->
+        <form id="username-form">
+            <label for="username">Enter your username:</label>
+            <input type="text" id="username" name="username" placeholder="Your name" required>
+            <button type="submit" class="btn">Let's Go!!</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('username-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+
+            if (username) {
+                localStorage.setItem('username', username);
+                window.location.href = 'nextpage.html';
+            } else {
+                alert('Please enter a valid username.');
+            }
+        });
+    </script>
+</body>
+</html>

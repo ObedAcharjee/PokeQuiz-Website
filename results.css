@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    font-size: 16px;
+}
+
+/* Default background (applied instantly) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(https://wallpaper.forfun.com/fetch/05/05a898a30c6cc94d43dceca1556e9c3e.jpeg) no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Android-specific background (applies immediately for Android devices) */
+@media (pointer: coarse) {
+    body::before {
+        background: url(gamblersmobile.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.result-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 90%;
+    max-width: 500px;
+}
+
+.pokemon-name {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.pokemon-image {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.pokedex-entry {
+    font-size: 1.2em;
+    color: #d3d3d3;
+}
+
+.back-btn {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: none;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You would be a </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="results.css">
+</head>
+<body>
+
+    <div class="result-container">
+        <h1>You would be a </h1>
+        <div id="pokemonResult">
+            <!-- Pokémon result will be displayed here -->
+        </div>
+        <button class="back-btn" onclick="window.location.href = 'index.html';">Back to Quiz</button>
+    </div>
+
+    <script>
+        // Retrieve the username from localStorage
+        const username = localStorage.getItem('username');
+
+        // Retrieve the Pokémon result from localStorage
+        const pokemonResult = JSON.parse(localStorage.getItem(`${username}_pokemon`));
+
+        // Display the Pokémon result if data exists
+        if (pokemonResult) {
+            document.getElementById('pokemonResult').innerHTML = `
+                <div class="pokemon-name">${pokemonResult.name}</div>
+                <img src="${pokemonResult.image}" alt="${pokemonResult.name}" class="pokemon-image">
+                <p class="pokedex-entry">${pokemonResult.entry}</p>
+            `;
+        } else {
+            document.getElementById('pokemonResult').innerHTML = '<p>No result found!</p>';
+        }
+    </script>
+
+</body>
+</html>
